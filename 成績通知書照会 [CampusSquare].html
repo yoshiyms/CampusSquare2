@@ -1,0 +1,3312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0118)file:///C:/Users/yoshi/Downloads/%E6%88%90%E7%B8%BE%E9%80%9A%E7%9F%A5%E6%9B%B8%E7%85%A7%E4%BC%9A%20[CampusSquare].html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+
+
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+
+
+
+
+
+<link rel="SHORTCUT ICON" href="https://jjh.tmu.ac.jp/campusweb/theme/default/image/favicon.ico">
+
+
+<meta name="format-detection" content="telephone=no">
+
+
+
+    
+    
+
+<title>成績通知書照会 [CampusSquare]</title>
+
+
+
+
+
+<link rel="stylesheet" href="./成績通知書照会 [CampusSquare]_files/StyleSheet.css" type="text/css">
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/ScriptColor.js.ダウンロード"></script>
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/Script.js.ダウンロード"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/jquery.cleditor.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/jquery-ui-1.8.19.custom_smart.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/portal_body.css">
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/portal_ajax.css">
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/portal_logo.css">
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/portal_tabmenu.css">
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/portal_table.css">
+<link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/portal_portlet.css">
+
+
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/jquery.min.js.ダウンロード"></script>
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/jquery-ui-1.8.19.custom.min.js.ダウンロード"></script>
+
+
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/jquery.cleditor.js.ダウンロード"></script>
+
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/portal_main.js.ダウンロード"></script>
+
+
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/portal_common.js.ダウンロード"></script>
+<script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/campus_colorpicker.js.ダウンロード"></script>
+
+
+    
+    <link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/flexslider.css">
+    <link rel="stylesheet" type="text/css" href="./成績通知書照会 [CampusSquare]_files/smart_style.css">
+
+    
+    <script type="text/javascript">
+        
+        
+        try{
+          if (opener && (this != opener)){
+            var urlTest = opener.location.href;  
+            if ($("#portal-body", opener.document).size() > 0){
+              
+              document.write('<style type="text/css">');
+              document.write('  #header-span {display: none;}');
+              document.write('  #footer-span {display: none;}');
+              document.write('</style>');
+            }
+          }
+        } catch(e) { }
+    </script>
+    
+  
+  
+    <script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/jquery.flexslider-min.js.ダウンロード"></script>
+    
+    <script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/smart_script.js.ダウンロード"></script>
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+  var session_time_out_timer = 0;
+  
+  
+    
+    
+      var session_time_out = "60.0";
+    
+  
+
+  function checkTimeout() {
+    var minute_cnt = document.TopForm.time_cnt.value - 0;
+    if (minute_cnt < session_time_out) {
+      var odd_time = session_time_out - minute_cnt;
+      document.TopForm.timeout.value = odd_time;
+
+      
+      $("#timeout-timer").text(odd_time);
+
+      
+      $("#portaltimer").unbind("click");
+      $("#portaltimer").click(function(){
+        extendSession();
+      });
+
+      document.TopForm.time_cnt.value = minute_cnt + 1;
+
+      if(session_time_out_timer == 0){
+        session_time_out_timer = setInterval("checkTimeout()", 60000);
+      }
+
+      if ("5" != ""){
+        if ("5" == odd_time + ""){
+          var SubWin = window.open("/campusweb/theme/default/TimeoutAlert.html", "",
+            "width=750,height=240,location=0,menubar=0,scrollbars=1,resizable=1,toolbar=0");
+        }
+      }
+    } else {
+      clearInterval(session_time_out_timer);
+      session_time_out_timer = 0;
+      document.TopForm.timeout.value = "0";
+
+      
+      $("#timeout-timer").text("0");
+
+      
+      $("#portaltimer").unbind("click");
+      
+      
+      if (true) {
+        var msg = "タイムアウトしました。";
+        if (msg == ""){
+          msg = "タイムアウトしました。";
+        }
+        alert(msg);
+      }
+      if (true) {
+        var SubWin = window.open("/campusweb/theme/default/Timeout.html", "",
+          "width=750,height=240,location=0,menubar=0,scrollbars=1,resizable=1,toolbar=0");
+      }
+    }
+  }
+
+  function initTimeout(){
+    if (true){
+      document.TopForm.time_cnt.value = "0";
+      clearInterval(session_time_out_timer);
+      session_time_out_timer = 0;
+      checkTimeout();
+    }
+  }
+
+
+  function extendSession() {
+    var url = getAjaxGetUrl("dummy", null);
+    $.get(url);
+    initTimeout();
+    
+  }
+
+  $(window).load(function(){
+    initTimeout();
+  });
+  
+
+
+
+
+
+var currentTabId = "si";
+
+
+
+var defWindowWidth = $(window).width();
+var defWindowHeight = $(window).height();
+var logoWidth = 1000;
+var defLeftMargin = 10;
+var defRightMargin = 11;  
+var portalLeftMargin = 0;
+var portalWidth = logoWidth;
+var tableWidth = logoWidth;
+var tabAreaWidthDef = logoWidth;
+var tabAreaWidth = tabAreaWidthDef;
+var tabMenuAreaWidth = tabAreaWidth;
+var bodyLeftMargin = 0;
+var portalAreaCount = 3;
+var resizeLock = false;
+var oldMainWidth = 0;
+
+
+var portalConf = {
+      'initPortalSettingFlg' : false,
+      'page'            : 'main',
+      'lang'            : 'ja',
+      'langDesign'      : 'ja',
+      'isDeviceLocaleSmartphone': true,
+      'templateSwitchKeySmart': false,
+      'runMode'         : '',   
+      'templateTabId'   : '*',
+      'authDesign'      : "",
+      'authDesignAll'   : "",
+      'authLayout'      : "",
+      'tabSize'         : 'M',
+      'tabWidth'        : 101,  
+      'tabHeight'       : 60,   
+      'tabIconVisible'  : 'checked',
+      'tabTextVisible'  : 'checked',
+      'tabVisible'      : 'checked',
+      'menuVisible'     : 'checked',
+      'portalUrl'       : 'campussmart.do',
+      'webUrl'          : 'campussquare.do',
+      'switchDeviceUrl' : 'campusportal.do',
+      'useIeCss3Pie'    : false,
+      'rwfHash'         : '4abcecdcca4012c1409daa7caf4c8536',
+      'mainDeleteFlg'   : '0'
+};
+
+
+var staticImg = {
+      'base'            : '/campusweb/theme/default/newportal/image/',
+      'sp'              : '/campusweb/theme/default/newportal/image/icon/sp.gif',
+      'menuFolder'      : '/campusweb/theme/default/newportal/image/design/menu_folder.png',
+      'menuFolderRight' : '/campusweb/theme/default/newportal/image/util/allow_tri_b.gif',
+      'plus'            : '/campusweb/theme/default/newportal/image/util/plus.png',
+      'portletBreak'    : '/campusweb/theme/default/newportal/image/design/portlet_break.png',
+      'portletNoBreak'  : '/campusweb/theme/default/newportal/image/design/portlet_nobreak.png',
+      'portletSet'      : '/campusweb/theme/default/newportal/image/design/portlet_set.png',
+      'portletDel'      : '/campusweb/theme/default/newportal/image/design/portlet_delete.png',
+      'portletUp'       : '/campusweb/theme/default/newportal/image/design/allow_btn_up.png',
+      'portletDown'     : '/campusweb/theme/default/newportal/image/design/allow_btn_down.png',
+      'toggleOpen'      : '/campusweb/theme/default/newportal/image/util/allow_s_b.gif',
+      'toggleClose'     : '/campusweb/theme/default/newportal/image/util/allow_s_r.gif'
+};
+
+
+var staticDoc = {
+	  'base'            : '/campusweb/theme/default/newportal/',
+      'PIE'             : '/campusweb/theme/default/newportal/pie/PIE.htc',
+      'DesginMain'      : '/campusweb/theme/default/newportal/design-main-frame.html'
+};
+
+var color_palette = [
+      'ffffff', 'f6f6f6', 'eeeeee', 'dddddd', 'cccccc', 'bbbbbb', '999999', '666666',
+      'eeeedd', 'eeeecc', 'eeeebb', 'eeeeaa', 'ddddcc', 'ddddbb', 'ddddaa', 'ddcc99',
+      'ffffee', 'ffffdd', 'ffffcc', 'ffffbb', 'eeddaa', 'eecc99', 'ddbb99', 'ccaa77',
+      'ddeeff', 'ccddff', 'bbccff', 'aaccee', 'ddeeee', 'cceeee', 'bbeeee', 'aadddd',
+      'ddffdd', 'cceecc', 'bbddbb', 'aaccaa', 'ddeebb', 'bbddaa', 'aacc99', '99bb88',
+      'ffeeee', 'ffdddd', 'ffcccc', 'ffaaaa', 'eecccc', 'ffbbaa', 'eeaaaa', 'dd9999',
+      'ffeeff', 'eeddee', 'ddccdd', 'ccaaaa', 'eeeeff', 'ddddff', 'ccccee', 'aaaacc'
+];
+
+
+
+
+
+  function hoverMenuOver(){
+    $(this).stop(true);
+    $(this).css({"text-decoration": "underline"});
+  }
+  function hoverMenuOut(){
+    $(this).css({"text-decoration": ""});
+  }
+  function hoverTabOver(){
+    $(this).stop(true);
+    $(this).css({"text-decoration": "underline"});
+    
+    
+    
+    $(this).find("img").animate({"opacity": "0.3"}, "fast",
+      function(){
+        $(this).animate({"opacity": "1.0"}, "fast",
+          function(){
+            $(this).css({"opacity": ""});
+          })
+      });
+  }
+  function hoverTabOut(){
+    $(this).stop(true);
+    $(this).css({"text-decoration": ""});
+    $(this).find("img").css({"opacity": ""});
+  }
+
+
+  function initSafe(){
+
+
+
+}
+  
+
+  $(document).ready(function(){
+    initSafe();
+
+
+
+    
+    
+
+
+    
+        
+        
+    
+    
+    
+    $(document).find("input:button, input:submit, input:reset, div.button, button").button();
+
+
+    
+    
+  
+  
+    var tabTAG = "tablist";
+  
+      $("#" + tabTAG + " .tabcell").click(function(){
+        var tabId = $(this).attr("id").substring(4);
+        if (tabId != 'blank'){
+          reloadPortal(tabId);
+        }
+    }).hover(
+      hoverTabOver, hoverTabOut
+    );
+
+
+
+    
+    $("div.portalarea").each(function(){
+      var _this = $(this);
+      var _thisid = _this.attr("id");
+      var _thisP = _this.parent();
+      
+      if (_this.children("div.portlet").size() <= 0){
+        
+        if (jQuery.browser.msie && jQuery.browser.version == 9){
+          $("#"+ _thisid +"-sp").parent().css({"visibility": "hidden", "height": "0px"});
+          if (_this.hasClass("portalarea-row")){
+            _thisP.parent().css({"visibility": "hidden", "height": "0px"});
+          } else {
+            _thisP.css({"visibility": "hidden", "height": "0px"});
+          }
+          
+        } else {
+          $("#"+ _thisid +"-sp").parent().hide();
+          if (_this.hasClass("portalarea-row")){
+            _thisP.parent().hide();
+          } else {
+            _thisP.hide();
+          }
+        }
+      }
+    });
+
+
+
+    
+    
+
+
+
+
+    
+
+
+
+
+  });
+  
+</script>
+
+
+
+
+
+
+<style type="text/css">
+body.logout { background-color: #eeeecc; }
+#header-span {  background: none; background-image: none; background-color: transparent; }
+#logo-span {  background: none; background-image: none; background-color: #eeeecc; }
+#body-span {  background: none; background-image: none; background-color: #eeeecc; }
+#footer-span {  background: none; background-image: none; background-color: #eeeecc; }
+#portal-body { background-color: #eeeecc; }
+#tabtable { width: 1000px; }
+#tabtable .tabcell { width: 69px; }
+#tabtable .tabcell img { width: 32px; height: 32px; margin-left: 18px; }
+#tabmenu-area { border: 1px #66BB66 solid; }
+.tabmenu-sub-ul { border: 1px #66BB66 solid; }
+#tabtable .tabcell-sel { border-top: 1px #66BB66 solid; }
+#tabtable .tabcell-sel { border-left: 1px #66BB66 solid; }
+#tabtable .tabcell-sel { border-right: 1px #66BB66 solid; }
+#tabtable .tabcell-sel { border-bottom: 1px #66BB66 solid; }
+#tabtable {  background: none; background-image: none; background-color: transparent; }
+#tab-span {  background: none; background-image: none; background-color: #eeeecc; }
+#tab-span { color: white; }
+#tabtable .tabcell-sel {  background: none; background-image: none; background-color: #66BB66; }
+#tabmenu-area {  background: none; background-image: none; background-color: #66BB66; }
+.tabmenu-sub-ul { background-color: #66BB66; }
+#tabtable .tabcell-sel { color: white; }
+#tabmenu-area { color: white; }
+.tabmenu-sub-ul { color: white; }
+#tabtable .tabcell-sel { border-radius: 10px 10px 0px 0px; }
+#tabtable .tabcell-sel { -webkit-border-radius: 10px 10px 0px 0px; }  /* for Webkit */
+#body-area {  background: none; background-image: none; background-color: transparent; }
+#portaltable .portalarea {  background: none; background-image: none; background-color: transparent; }
+#portaltable .portalarea { border: 1px transparent solid; }
+#portaltable .portalarea-row-sp .space { height: 1px; }
+#portaltable .portalarea-sp .space { width: 1px; }
+.portlet {  background: none; background-image: none; background-color: #f0f0f0; }
+.portlet { color: black; }
+.portlet { border: 1px transparent solid; }
+.portlet { border-radius: 0; }
+.portlet { -webkit-border-radius: 0; }  /* for Webkit */
+.portlet { box-shadow: none; }
+.portlet { -webkit-box-shadow: none; }  /* for Webkit */
+.portlet-title { display: block; }
+.portlet-title-linker { display: block; }
+.portlet-title {  background: none; background-image: none; background-color: #555555; }
+.portlet-title { border-radius: 0; }
+.portlet-title { -webkit-border-radius: 0; }  /* for Webkit */
+.portlet-title { color: white; }
+body.logout { background-color: null; }
+#wf_PTW0005200-s_20130701184618-box   {  background: none; background-image: none; background-color: #ddeebb; }
+#wf_PTW0005200-s_20130701184618-box   { color: black; }
+#wf_PTW0005200-s_20130701184618-box   { border: 1px transparent solid; }
+#wf_PTW0005200-s_20130701184618-box   { border-radius: 0; }
+#wf_PTW0005200-s_20130701184618-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0005200-s_20130701184618-box   { box-shadow: none; }
+#wf_PTW0005200-s_20130701184618-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0005200-s_20130701184618-box .portlet-title { display: block; }
+#wf_PTW0005200-s_20130701184618-box .portlet-title-linker { display: block; }
+#wf_PTW0005200-s_20130701184618-box .portlet-title {  background: none; background-image: none; background-color: #336622; }
+#wf_PTW0005200-s_20130701184618-box .portlet-title { border-radius: 0; }
+#wf_PTW0005200-s_20130701184618-box .portlet-title { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0005200-s_20130701184618-box .portlet-title { color: white; }
+body.logout { background-color: null; }
+#wf_PTW0000100-free_20120826104007-box   {  background: none; background-image: none; background-color: transparent; }
+#wf_PTW0000100-free_20120826104007-box   { color: inherit; }
+#wf_PTW0000100-free_20120826104007-box   { border: 1px transparent solid; }
+#wf_PTW0000100-free_20120826104007-box   { border-radius: 0; }
+#wf_PTW0000100-free_20120826104007-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000100-free_20120826104007-box   { box-shadow: none; }
+#wf_PTW0000100-free_20120826104007-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000100-free_20120826104007-box .portlet-title { display: none; }
+#wf_PTW0000100-free_20120826104007-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0000100-2s_20130701193541-box   {  background: none; background-image: none; background-color: #90B026; }
+#wf_PTW0000100-2s_20130701193541-box   { color: black; }
+#wf_PTW0000100-2s_20130701193541-box   { border: 1px transparent solid; }
+#wf_PTW0000100-2s_20130701193541-box   { border-radius: 0; }
+#wf_PTW0000100-2s_20130701193541-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000100-2s_20130701193541-box   { box-shadow: none; }
+#wf_PTW0000100-2s_20130701193541-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000100-2s_20130701193541-box .portlet-title { display: none; }
+#wf_PTW0000100-2s_20130701193541-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0005000-s_20130701184643-box   {  background: none; background-image: none; background-color: #f6f6f6; }
+#wf_PTW0005000-s_20130701184643-box   { color: black; }
+#wf_PTW0005000-s_20130701184643-box   { border: 1px transparent solid; }
+#wf_PTW0005000-s_20130701184643-box   { border-radius: 0; }
+#wf_PTW0005000-s_20130701184643-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0005000-s_20130701184643-box   { box-shadow: none; }
+#wf_PTW0005000-s_20130701184643-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0005000-s_20130701184643-box .portlet-title { display: block; }
+#wf_PTW0005000-s_20130701184643-box .portlet-title-linker { display: block; }
+#wf_PTW0005000-s_20130701184643-box .portlet-title {  background: none; background-image: none; background-color: #333333; }
+#wf_PTW0005000-s_20130701184643-box .portlet-title { border-radius: 0; }
+#wf_PTW0005000-s_20130701184643-box .portlet-title { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0005000-s_20130701184643-box .portlet-title { color: white; }
+body.logout { background-color: null; }
+#wf_PTW0000100-2s_20130701193630-box   {  background: none; background-image: none; background-color: #ffffff; }
+#wf_PTW0000100-2s_20130701193630-box   { color: black; }
+#wf_PTW0000100-2s_20130701193630-box   { border: 1px transparent solid; }
+#wf_PTW0000100-2s_20130701193630-box   { border-radius: 0; }
+#wf_PTW0000100-2s_20130701193630-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000100-2s_20130701193630-box   { box-shadow: none; }
+#wf_PTW0000100-2s_20130701193630-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000100-2s_20130701193630-box .portlet-title { display: none; }
+#wf_PTW0000100-2s_20130701193630-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0000100-100_20120826130455-box   {  background: none; background-image: none; background-color: transparent; }
+#wf_PTW0000100-100_20120826130455-box   { color: inherit; }
+#wf_PTW0000100-100_20120826130455-box   { border: 1px transparent solid; }
+#wf_PTW0000100-100_20120826130455-box   { border-radius: 0; }
+#wf_PTW0000100-100_20120826130455-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000100-100_20120826130455-box   { box-shadow: none; }
+#wf_PTW0000100-100_20120826130455-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000100-100_20120826130455-box .portlet-title { display: none; }
+#wf_PTW0000100-100_20120826130455-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0000012-100_20130620143958-box   {  background: none; background-image: none; background-color: transparent; }
+#wf_PTW0000012-100_20130620143958-box   { color: inherit; }
+#wf_PTW0000012-100_20130620143958-box   { border: 1px transparent solid; }
+#wf_PTW0000012-100_20130620143958-box   { border-radius: 0; }
+#wf_PTW0000012-100_20130620143958-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000012-100_20130620143958-box   { box-shadow: none; }
+#wf_PTW0000012-100_20130620143958-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000012-100_20130620143958-box .portlet-title { display: none; }
+#wf_PTW0000012-100_20130620143958-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0000014_20130701190030-box   {  background: none; background-image: none; background-color: transparent; }
+#wf_PTW0000014_20130701190030-box   { color: inherit; }
+#wf_PTW0000014_20130701190030-box   { border: 1px transparent solid; }
+#wf_PTW0000014_20130701190030-box   { border-radius: 0; }
+#wf_PTW0000014_20130701190030-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000014_20130701190030-box   { box-shadow: none; }
+#wf_PTW0000014_20130701190030-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000014_20130701190030-box .portlet-title { display: none; }
+#wf_PTW0000014_20130701190030-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0000014_20130620162120-box   {  background: none; background-image: none; background-color: transparent; }
+#wf_PTW0000014_20130620162120-box   { color: inherit; }
+#wf_PTW0000014_20130620162120-box   { border: 1px transparent solid; }
+#wf_PTW0000014_20130620162120-box   { border-radius: 0; }
+#wf_PTW0000014_20130620162120-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000014_20130620162120-box   { box-shadow: none; }
+#wf_PTW0000014_20130620162120-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000014_20130620162120-box .portlet-title { display: none; }
+#wf_PTW0000014_20130620162120-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0005100-s_20130701183221-box   {  background: none; background-image: none; background-color: #aaccee; }
+#wf_PTW0005100-s_20130701183221-box   { color: black; }
+#wf_PTW0005100-s_20130701183221-box   { border: 1px transparent solid; }
+#wf_PTW0005100-s_20130701183221-box   { border-radius: 0; }
+#wf_PTW0005100-s_20130701183221-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0005100-s_20130701183221-box   { box-shadow: none; }
+#wf_PTW0005100-s_20130701183221-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0005100-s_20130701183221-box .portlet-title { display: block; }
+#wf_PTW0005100-s_20130701183221-box .portlet-title-linker { display: block; }
+#wf_PTW0005100-s_20130701183221-box .portlet-title {  background: none; background-image: none; background-color: #223355; }
+#wf_PTW0005100-s_20130701183221-box .portlet-title { border-radius: 0; }
+#wf_PTW0005100-s_20130701183221-box .portlet-title { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0005100-s_20130701183221-box .portlet-title { color: white; }
+body.logout { background-color: null; }
+#wf_PTW0000013_20120827093353-box   {  background: none; background-image: none; background-color: transparent; }
+#wf_PTW0000013_20120827093353-box   { color: inherit; }
+#wf_PTW0000013_20120827093353-box   { border: 1px transparent solid; }
+#wf_PTW0000013_20120827093353-box   { border-radius: 0; }
+#wf_PTW0000013_20120827093353-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000013_20120827093353-box   { box-shadow: none; }
+#wf_PTW0000013_20120827093353-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000013_20120827093353-box .portlet-title { display: none; }
+#wf_PTW0000013_20120827093353-box .portlet-title-linker { display: none; }
+body.logout { background-color: null; }
+#wf_PTW0000100-2s_20130701193700-box   {  background: none; background-image: none; background-color: #E67E22; }
+#wf_PTW0000100-2s_20130701193700-box   { color: black; }
+#wf_PTW0000100-2s_20130701193700-box   { border: 1px transparent solid; }
+#wf_PTW0000100-2s_20130701193700-box   { border-radius: 0; }
+#wf_PTW0000100-2s_20130701193700-box   { -webkit-border-radius: 0; }  /* for Webkit */
+#wf_PTW0000100-2s_20130701193700-box   { box-shadow: none; }
+#wf_PTW0000100-2s_20130701193700-box   { -webkit-box-shadow: none; }  /* for Webkit */
+#wf_PTW0000100-2s_20130701193700-box .portlet-title { display: none; }
+#wf_PTW0000100-2s_20130701193700-box .portlet-title-linker { display: none; }
+</style>
+
+
+
+</head>
+
+
+
+
+
+
+<body id="portal-body">
+
+
+
+
+
+    <div id="portlet-setting-param-dlg" class="portal-setting-dlg">
+        <div class="loading" id="portal-setting-param-dlg-box-loading"></div>
+        <div id="portal-setting-param-dlg-box">
+            
+        </div>
+    </div>
+
+
+<div id="header-span">
+    <div id="header-area">
+      
+      <div id="logo-span">
+            
+            
+            
+            
+            
+              <div id="area-top1-parent">
+              <div id="area-top1" class="portalarea">
+                  
+                  
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-free portlet-break" id="wf_PTW0000100-free_20120826104007-box">
+                                  <div class="loading" id="wf_PTW0000100-free_20120826104007-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000100-free_20120826104007">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000100-free_20120826104007-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>ロゴ</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="ロゴ">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="Logo">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="0">
+</div>
+
+
+
+
+
+
+
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            <div id="webpage-contents" class="portlet-contents webpage-contents"><div style="width: auto; margin-top:10px; margin-right: 5px; font-size:125%;font-weight: bold;"><img src="./成績通知書照会 [CampusSquare]_files/square_smart.png" width="20" height="20" align="left" style="margin-top:-2px"><span><span style="color:#38d;">C</span>AMPUS<span style="color:#38d;">S</span>QUARE</span></div>
+</div>
+            
+            
+        
+        
+        
+        
+    
+
+    <script type="text/javascript">
+    
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-free" id="wf_PTW0000013_20120827093353-box">
+                                  <div class="loading" id="wf_PTW0000013_20120827093353-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000013_20120827093353">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000013_20120827093353-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>ログインユーザ情報</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="ログインユーザ情報">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="Login user info&#39;s">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="0">
+</div>
+
+
+
+
+
+  
+
+
+
+
+    
+
+
+<div id="portal-loginuser-info" class="clearfix portal-loginuser-info-smart">
+    
+    <ul class="clearfix" id="portaluser">
+        <li><img id="portaluserimg" alt="" src="./成績通知書照会 [CampusSquare]_files/portal_user_smart.png"></li>
+        <li class="txt">
+            
+            
+                <span>山下　喜弘
+            
+            
+            
+            
+            </span>
+        </li>
+    </ul>
+    
+</div>
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-full portlet-break" id="wf_PTW0000012-100_20130620143958-box">
+                                  <div class="loading" id="wf_PTW0000012-100_20130620143958-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000012-100_20130620143958">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000012-100_20130620143958-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>システムメニュー(100%)</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="システムメニュー(100%)">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="System Menu(100%)">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="0">
+</div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+<div id="portal-system-menu" class="clearfix portal-system-menu-1">
+
+
+  
+  
+    
+    <ul class="clearfix btn" id="portalsmart"><li><img id="portalsmartimg" alt="" src="./成績通知書照会 [CampusSquare]_files/pc_page_smart.png"></li><li class="txt"><span>PC版</span></li></ul>
+  
+  
+  
+
+
+
+    <ul class="clearfix btn" id="portallocale" style=""><li><img id="portallocaleimg" alt="" src="./成績通知書照会 [CampusSquare]_files/portal_locale_smart.png"></li><li class="txt"><span>English</span></li></ul>
+
+
+    <ul class="clearfix btn" id="portaltimer" title="クリックで延長" style=""><li><img id="portaltimerimg" alt="" src="./成績通知書照会 [CampusSquare]_files/portal_timeout_smart.png"></li><li class="txt"><span>残り<br>約<span id="timeout-timer">56</span>分</span></li></ul>
+
+
+    
+    <ul class="clearfix btn" id="logout" style=""><li><img id="logocelllogoutimg" alt="" src="./成績通知書照会 [CampusSquare]_files/logout_smart.png"></li><li class="txt"><span>ログアウト</span></li></ul>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    $("#portallocale").unbind().hover(
+      hoverMenuOver, hoverMenuOut
+    ).click(function(){
+      reloadPortal(null, null, 'en_US');
+    });
+    $("#portalsmart").unbind().hover(
+      hoverMenuOver, hoverMenuOut
+    ).click(function(){
+      reloadPortal(null, null, 'ja_JP', true);
+    });
+    $("#portaltimer").unbind().hover(
+      hoverMenuOver, hoverMenuOut
+    ).click(function(){
+      extendSession();
+    });
+    $("#portalset").unbind().hover(
+      hoverMenuOver, hoverMenuOut
+    ).click(function(){
+      portalDesign();
+    });
+
+    $("#portalpswd").unbind().hover(
+      hoverMenuOver, hoverMenuOut
+    ).click(function(){
+      
+      
+        
+        reloadPortal(null, null, null, false, 'USW0009400-flow', 'rfw');
+      
+    });
+
+    $("#logout").unbind().hover(
+      hoverMenuOver, hoverMenuOut
+    ).click(function(){
+        
+        
+            
+            $("#wf_PTW0000012-100_20130620143958-dlg").dialog({
+                autoOpen: true,
+                modal: true,
+                width: 220,
+                height: 170,
+                resizable: false,
+                title: ('Logout'),
+                open: function(event) {
+                    $(this).closest(".ui-dialog").next(".ui-widget-overlay").css("background", "");
+                    $(this).parent().find(".ui-dialog-titlebar-close").hide();
+                    var cf = {};
+                    cf.wfId = "nwf_PTW0000003_logout";
+                    loadPortletPost('wf_PTW0000012-100_20130620143958-dlg-box', null, {'customHidden': (cf)});
+                },
+                close: function(){
+                    $(this).dialog("destroy");
+                }
+            });
+        
+        
+        
+        
+        return false;
+    });
+
+</script>
+
+<div id="wf_PTW0000012-100_20130620143958-dlg" class="display-hide">
+<div class="loading" id="wf_PTW0000012-100_20130620143958-dlg-box-loading"></div>
+<div id="wf_PTW0000012-100_20130620143958-dlg-box">
+</div>
+</div>
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                  <div class="portlet-break end-of-dummy" id="end-of-dummy-header-top1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+              </div>
+              </div>
+            
+
+          <div id="logo-area">
+
+            
+            <form name="TopForm" style="margin: 0px; padding: 0px;" action="https://jjh.tmu.ac.jp/campusweb/campussquare.do">
+                <input type="hidden" name="time_cnt" value="5">
+                <input type="hidden" name="_eventId">
+                <input type="hidden" name="_flowExecutionKey">
+                <input type="hidden" name="timeout" id="timeout" value="56">
+            </form>
+
+            
+            
+              <div id="area-h1-parent">
+              <div id="area-h1" class="portalarea">
+                  
+                  
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-full portlet-break" id="wf_PTW0000014_20130620162120-box">
+                                  <div class="loading" id="wf_PTW0000014_20130620162120-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000014_20130620162120">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000014_20130620162120-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>スマホ用パンくずリスト</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="スマホ用パンくずリスト">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="SmartPhone BreadCrumbList">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="0">
+</div>
+
+
+
+<div class="clearfix">
+    <div onclick="reloadPortal(&#39;TABMENU&#39;, null, null);" class="breadcrumb-list" id="breadcrumb-1">
+        HOME
+    </div>
+
+
+    
+    
+    
+    
+    <div onclick="reloadPortal(&#39;si&#39;, null, null);" class="breadcrumb-list" id="breadcrumb-2">
+        成績 MENU
+    </div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                  <div class="portlet-break end-of-dummy" id="end-of-dummy-header-h1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+              </div>
+              </div>
+            
+          </div>
+      </div>
+
+
+
+
+
+
+      <div id="tab-span">
+          <div id="tab-area">
+
+    
+    
+    
+
+    
+    
+    
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+
+
+
+<div id="body-span">
+
+    
+    
+      <div id="area-mt1-parent">
+      <div id="area-mt1" class="portalarea">
+          
+          
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+                  
+                  
+                      
+                  
+                  
+                  
+                  
+                  
+                      
+                      
+                          
+                      
+                      <div class="portlet portlet-l portlet-break" id="main-frame">
+                          <div class="loading" id="main-frame-div-loading"></div>
+                          <div class="portlet-box" id="main-frame-div" style="display:block;"><div id="main-portlet-body">
+                
+                
+                
+            
+        
+    
+    
+    
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        <meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+
+        
+        
+        <link rel="SHORTCUT ICON" href="https://jjh.tmu.ac.jp/campusweb/theme/default/image/favicon.ico">
+        
+        
+        <meta name="format-detection" content="telephone=no">
+        
+        
+    
+         
+        <title>成績通知書照会</title>
+        
+      
+      
+        
+        <script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/main_portlet.js.ダウンロード"></script>
+        
+        
+        
+          
+            
+            
+            <script type="text/javascript" src="./成績通知書照会 [CampusSquare]_files/smart_script.js.ダウンロード"></script>
+        
+        
+        
+        <style type="text/css">
+body.logout { background-color: #eeeecc; }
+body {  background: none; background-image: none; background-color: #f0f0f0; }
+.portlet-title { display: block; }
+.portlet-title-linker { display: block; }
+.portlet-title {  background: none; background-image: none; background-color: #555555; }
+.portlet-title { border-radius: 0; }
+.portlet-title { -webkit-border-radius: 0; }  /* for Webkit */
+.portlet-title { color: white; }
+</style>
+
+    
+    
+    
+    
+        
+        
+    
+
+
+
+
+
+    
+
+
+
+<style type="text/css">
+.go { display:table; width: 35px; background: #ffa500; border-radius: 6px 6px 6px 6px;}
+.go:after {content:"合"; display:table-cell; vertical-align:middle; text-align:center; color: #fff; font-weight: bold;}
+.hi { display:table; width: 35px; background: #a9a9a9; border-radius: 6px 6px 6px 6px; margin:0 auto;}
+.hi:after {content:"否"; display:table-cell; vertical-align:middle; text-align:center; color: #fff; font-weight: bold;}
+</style>
+
+
+<script language="JavaScript">
+
+function callIndicate() {
+	document.BackForm._eventId.value = 'eventBackIndicate';
+	document.BackForm.submit();
+	return false;
+}
+
+</script>
+
+
+
+	
+
+
+
+
+
+
+    
+    
+    
+    <div class="portlet-title" id="main-portlet-title">
+        <img src="./成績通知書照会 [CampusSquare]_files/func_refer4.gif"><span>成績通知書照会</span>
+    </div>
+
+    <form name="TimeoutForm" style="margin: 0px; padding: 0px;">
+        <input type="hidden" name="status" value="0">
+    </form>
+
+
+
+
+
+
+	<p>
+		
+	</p>
+
+	
+		<ul style="list-style:none;padding:0;margin:0;">
+			<li style="padding:10px 0px 10px 10px;">
+				
+					
+					
+						2024年度 前期
+					
+				
+				<br>
+				修得単位数
+				
+				14.0
+			</li>
+		</ul>
+	
+
+	<p></p>
+	
+		
+
+<ul class="campussmart-list">
+	<li class="first">
+		<table>
+			<thead>
+				<tr>
+					<th width="10%" class="seiseki-head"></th>
+					<th class="seiseki-head">科目</th>
+					
+					<th width="15%" class="seiseki-head">評語</th>
+					<th width="15%" class="seiseki-head">合否</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">1</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">基礎加工学</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							良
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">2</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">機械工学演習Ⅰ</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							優
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">3</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">知能機械応用実験</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							優
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">4</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">システム工学</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							秀
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">5</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">基礎設計工学</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							優
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">6</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">システム制御演習</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							良
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">7</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">プログラミング演習II</span><br>
+							専門教育科目
+							システムデザイン学部
+							機械システム工学科<br>
+							2.0単位
+
+
+                            2024年
+							前期
+						</td>
+						
+						<td class="center">
+							優
+						</td>
+						<td class="center">
+							<div style="margin:0 auto;" class="go"></div>
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD">
+						<td class="center">8</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">小計</span><br>
+							 
+							 
+							 <br>
+							14.0単位
+
+
+                             
+							
+						</td>
+						
+						<td class="center">
+							
+						</td>
+						<td class="center">
+							
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">9</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">専門教育科目計</span><br>
+							 
+							 
+							 <br>
+							14.0単位
+
+
+                             
+							
+						</td>
+						
+						<td class="center">
+							
+						</td>
+						<td class="center">
+							
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">10</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">総計</span><br>
+							 
+							 
+							 <br>
+							14.0単位
+
+
+                             
+							
+						</td>
+						
+						<td class="center">
+							
+						</td>
+						<td class="center">
+							
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">11</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">累積GPA</span><br>
+							 
+							 
+							 <br>
+							3.32
+
+
+                             
+							
+						</td>
+						
+						<td class="center">
+							
+						</td>
+						<td class="center">
+							
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">12</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">年度GPA</span><br>
+							 
+							 
+							 <br>
+							2.85
+
+
+                             
+							
+						</td>
+						
+						<td class="center">
+							
+						</td>
+						<td class="center">
+							
+
+							
+						</td>
+					</tr>
+				
+					<tr onmouseout="TRMouseOut(this)" onmouseover="TRMouseOver(this)" bgcolor="#DDDDDD" style="background: rgb(221, 221, 221);">
+						<td class="center">13</td>
+						<td class="left" style="padding:5px 0px 5px 10px;">
+							<span class="h3">学期GPA</span><br>
+							 
+							 
+							 <br>
+							2.85
+
+
+                             
+							
+						</td>
+						
+						<td class="center">
+							
+						</td>
+						<td class="center">
+							
+
+							
+						</td>
+					</tr>
+				
+				
+			</tbody>
+		</table>
+	</li>
+	<li class="footer"><div class="arrow-top">TOPへ</div></li>
+</ul>
+<br>
+<br>
+
+	
+
+	
+
+	
+
+
+
+
+
+
+
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+        
+            
+            
+            
+                </div><!-- main-frame-div-point --></div>
+                          <div class="loading" id="main-frame-if-loading"></div>
+                          <iframe name="portlet-body" id="main-frame-if" scrolling="no" frameborder="0" framespacing="0" border="0" marginwidth="0" marginheight="0" title="" src="./成績通知書照会 [CampusSquare]_files/saved_resource.html"></iframe>
+                      </div>
+                  
+                  
+                  
+              
+          
+              
+          
+              
+          
+              
+          
+          <div class="portlet-break end-of-dummy" id="end-of-dummy-header-mt1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+      </div>
+      </div>
+    
+    
+    
+    <div id="body-area">
+      <table id="portaltable">
+        <tbody>
+          
+          
+          <tr id="portalrow-top-sp">
+            <td id="portalarea-left-sp" class="portalarea-sp-hfix" rowspan="10"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+            <td id="portalarea-top-sp" class="portalarea-sp-vfix" colspan="7"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+            <td id="portalarea-right-sp" class="portalarea-sp-hfix" rowspan="10"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+          </tr>
+          
+          
+          
+          
+            <tr id="portalrow-header1" style="display: none;">
+              <td colspan="7" id="area-mh1-parent">
+                <div id="area-mh1" class="portalarea portalarea-row clear-fix">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-mh1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+              </td>
+            </tr>
+            <tr id="portalrow-header1-sp" style="display: none;">
+              <td id="area-mh1-sp" class="portalarea-row-sp" colspan="7"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+            </tr>
+          
+          
+          
+          <tr id="portalrow-body">
+          
+            
+            <td id="area-m1-parent" style="display: none;">
+                <div id="area-m1" class="portalarea">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+            </td>
+          
+            
+                <td id="area-m2-sp-parent" style="display: none;"><div id="area-m2-sp" class="portalarea-sp"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div></td>
+            
+            <td id="area-m2-parent" style="display: none;">
+                <div id="area-m2" class="portalarea">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-2" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+            </td>
+          
+            
+                <td id="area-m3-sp-parent" style="display: none;"><div id="area-m3-sp" class="portalarea-sp"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div></td>
+            
+            <td id="area-m3-parent" style="display: none;">
+                <div id="area-m3" class="portalarea">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-3" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+            </td>
+          
+            
+                <td id="area-m4-sp-parent" style="display: none;"><div id="area-m4-sp" class="portalarea-sp"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div></td>
+            
+            <td id="area-m4-parent" style="display: none;">
+                <div id="area-m4" class="portalarea">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-4" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+            </td>
+          
+          </tr>
+          
+          
+          
+            <tr id="portalrow-footer1-sp" style="display: none;">
+              <td id="area-mf1-sp" class="portalarea-row-sp" colspan="7"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+            </tr>
+            <tr id="portalrow-footer1" style="display: none;">
+              <td colspan="7" id="area-mf1-parent">
+                <div id="area-mf1" class="portalarea portalarea-row clear-fix">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-mf1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+              </td>
+            </tr>
+          
+            <tr id="portalrow-footer2-sp" style="display: none;">
+              <td id="area-mf2-sp" class="portalarea-row-sp" colspan="7"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+            </tr>
+            <tr id="portalrow-footer2" style="display: none;">
+              <td colspan="7" id="area-mf2-parent">
+                <div id="area-mf2" class="portalarea portalarea-row clear-fix">
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                    <div class="portlet-break end-of-dummy" id="end-of-dummy-mf2" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+                </div>
+              </td>
+            </tr>
+          
+          
+          
+          <tr id="portalrow-bottom-sp">
+            <td id="portalarea-bottom-sp" class="portalarea-sp-vfix" colspan="7"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+    
+      <div id="area-mb1-parent" style="display: none;">
+      <div id="area-mb1" class="portalarea">
+          
+          
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+              
+          
+          <div class="portlet-break end-of-dummy" id="end-of-dummy-header-mb1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+      </div>
+      </div>
+    
+    
+</div>
+
+
+
+<div id="footer-span">
+    <div id="footer-area">
+    
+    </div>
+    
+            
+            
+              <div id="area-f1-parent">
+              <div id="area-f1" class="portalarea">
+                  
+                  
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-s portlet-break" id="wf_PTW0005200-s_20130701184618-box">
+                                  <div class="loading" id="wf_PTW0005200-s_20130701184618-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0005200-s_20130701184618">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0005200-s_20130701184618-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/infoman.png"><span>新着情報</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="新着情報">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="What&#39;s New">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/infoman.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="1">
+</div>
+
+
+
+<script language="javascript">
+    function doPage(wfId, categoryCd, linkTo, id) {
+    	$("#" + wfId + "-WhatsNewForm input:hidden[name=wnId]").val(id);
+    	if ( categoryCd == 1) {
+    		
+    		loadPortletMain(linkTo);
+    		if(true){
+    			$("#tab-span", document).hide();
+        	$("#main-frame", document).show();
+    		}
+    	} else {
+    		loadWebMain(linkTo);
+    	}
+    	loadPortletPost(wfId, wfId+"-WhatsNewForm");
+        return false;
+    }
+</script>
+
+<form id="wf_PTW0005200-s_20130701184618-WhatsNewForm" name="wf_PTW0005200-s_20130701184618-WhatsNewForm" method="POST" action="https://jjh.tmu.ac.jp/campusweb/campussmart.do">
+  <input type="hidden" name="action" value="rwf">
+  <input type="hidden" name="tabId" value="*">
+  <input type="hidden" name="wfId" value="wf_PTW0005200-s_20130701184618">
+  <input type="hidden" name="wnId">
+  <input type="hidden" name="event" value="doUpdate">
+
+<div id="whatsnew-portlet">
+  <div class="box">
+    
+      
+      
+        <div align="center">
+          あなた宛の新着情報があります。
+          
+            <input type="hidden" id="wnId" name="wnId" value="0">
+          
+        </div>
+        
+          
+            <div class="mysch-portlet-title">
+              
+              
+              <img alt="　" src="./成績通知書照会 [CampusSquare]_files/keiji.png">
+              <a href="javascript:void(0)" onclick="doPage(&#39;wf_PTW0005200-s_20130701184618&#39;, &#39;1&#39;, &#39;PTW0005300&#39;, &#39;1700454&#39;);">
+              <font size="2"> 新着の掲示があります。</font>
+              </a>
+            </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        
+          
+          
+          
+          
+          
+          
+          
+            <div class="mysch-portlet-title">
+            <a href="javascript:void(0)" onclick="doPage(&#39;wf_PTW0005200-s_20130701184618&#39;, &#39;7&#39;, &#39;KHW0001100-flow&#39;, &#39;2169282&#39;);">
+              
+              
+              <img alt="　" src="./成績通知書照会 [CampusSquare]_files/tab_kyuho.png">
+              <font size="2"> 休講補講臨時教室変更が登録されました。</font>
+            </a>
+            </div>
+          
+          
+          
+          
+        
+      
+    
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-s portlet-break" id="wf_PTW0005000-s_20130701184643-box">
+                                  <div class="loading" id="wf_PTW0005000-s_20130701184643-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0005000-s_20130701184643">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0005000-s_20130701184643-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>リンク</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="リンク">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="Link">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="1">
+</div>
+
+
+
+<script language="javascript">
+<!--
+    function doOpenWindow(url) {
+        SubWin = window.open(url);
+        return false;
+    }
+//-->
+</script>
+
+<form id="wf_PTW0005000-s_20130701184643-WebLinkForm" name="wf_PTW0005000-s_20130701184643-WebLinkForm" method="POST" action="https://jjh.tmu.ac.jp/campusweb/campussmart.do">
+    <input type="hidden" name="action" value="rwf">
+    <input type="hidden" name="tabId" value="*">
+    <input type="hidden" name="wfId" value="wf_PTW0005000-s_20130701184643">
+    <input type="hidden" name="event">
+  <p>
+  </p><a href="https://jjh.tmu.ac.jp/campusweb/theme/default/image/course_registration_FAQ.html" target="_blank" title="履修申請よくある問い合わせ">履修申請よくある問い合わせ</a><div style="margin-top:10px"></div><a href="http://www.comp.tmu.ac.jp/joho/" target="_blank" title="東京都立大学CAMPUSSQUARE総合案内">東京都立大学CAMPUSSQUARE総合案内</a><table border="0" width="100%" style="word-break:break-all;">
+      <tbody><tr>
+          
+      </tr>
+      <tr></tr>
+      <tr>
+          
+      </tr>
+      
+    
+  </tbody></table>
+    <p><input type="button" value="Myﾘﾝｸ編集" onclick="loadPortletMenu(&#39;_blank&#39;, &#39;campussquare.do?_flowId=PTW0001100-flow&#39;);" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false" control-id="ControlID-1"></p>
+</form>
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-full portlet-break" id="wf_PTW0000014_20130701190030-box">
+                                  <div class="loading" id="wf_PTW0000014_20130701190030-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000014_20130701190030">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000014_20130701190030-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>スマホ用パンくずリスト</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="スマホ用パンくずリスト">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="SmartPhone BreadCrumbList">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="0">
+</div>
+
+
+
+<div class="clearfix">
+    <div onclick="reloadPortal(&#39;TABMENU&#39;, null, null);" class="breadcrumb-list" id="breadcrumb-1">
+        HOME
+    </div>
+
+
+    
+    
+    
+    
+    <div onclick="reloadPortal(&#39;si&#39;, null, null);" class="breadcrumb-list" id="breadcrumb-2">
+        成績 MENU
+    </div>
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-2s portlet-break" id="wf_PTW0000100-2s_20130701193630-box">
+                                  <div class="loading" id="wf_PTW0000100-2s_20130701193630-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000100-2s_20130701193630">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000100-2s_20130701193630-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>WEBページ作成(2S)</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="WEBページ作成(2S)">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="Web Page Create(2S)">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="1">
+</div>
+
+
+
+
+
+
+
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            <div id="webpage-contents" class="portlet-contents webpage-contents"><div align="center"><img src="./成績通知書照会 [CampusSquare]_files/nssol.gif" width="58" height="58"></div><br></div>
+            
+            
+        
+        
+        
+        
+    
+
+    <script type="text/javascript">
+    
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-2s" id="wf_PTW0000100-2s_20130701193700-box">
+                                  <div class="loading" id="wf_PTW0000100-2s_20130701193700-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000100-2s_20130701193700">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000100-2s_20130701193700-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>WEBページ作成(2S)</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="WEBページ作成(2S)">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="Web Page Create(2S)">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="1">
+</div>
+
+
+
+
+
+
+
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            <div id="webpage-contents" class="portlet-contents webpage-contents"><div align="center"><img src="./成績通知書照会 [CampusSquare]_files/ifn0016.gif" style="margin-top: 10px; margin-bottom: 7px;" height="56" width="92"></div></div>
+            
+            
+        
+        
+        
+        
+    
+
+    <script type="text/javascript">
+    
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-2s" id="wf_PTW0000100-2s_20130701193541-box">
+                                  <div class="loading" id="wf_PTW0000100-2s_20130701193541-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000100-2s_20130701193541">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000100-2s_20130701193541-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>WEBページ作成(2S)</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="WEBページ作成(2S)">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="Web Page Create(2S)">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="1">
+</div>
+
+
+
+
+
+
+
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            <div id="webpage-contents" class="portlet-contents webpage-contents"><div align="center"><img src="./成績通知書照会 [CampusSquare]_files/ifn0049.gif" style="margin-top: 10px; margin-bottom: 7px;" height="56" width="92"></div></div>
+            
+            
+        
+        
+        
+        
+    
+
+    <script type="text/javascript">
+    
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                          
+                          
+                              
+                          
+                          
+                          
+                          
+                          
+                          
+                              <div class="portlet portlet-full portlet-break" id="wf_PTW0000100-100_20120826130455-box">
+                                  <div class="loading" id="wf_PTW0000100-100_20120826130455-loading" style=""></div>
+                                  <div class="portlet-box" id="wf_PTW0000100-100_20120826130455">
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portlet-title clearfix" id="wf_PTW0000100-100_20120826130455-title">
+
+
+    <img src="./成績通知書照会 [CampusSquare]_files/info.png"><span>copyright</span>
+
+
+
+
+    
+    <input type="hidden" name="wfNm" id="wfNm" value="copyright">
+    <input type="hidden" name="wfNmEng" id="wfNmEng" value="copyright">
+    <input type="hidden" name="wfIcon" id="wfIcon" value="icon/info.png">
+    <input type="hidden" name="wfDeleteFlg" id="wfDeleteFlg" value="0">
+</div>
+
+
+
+
+
+
+
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            <div id="webpage-contents" class="portlet-contents webpage-contents"><br>
+<div align="right" style="font-size: 83%;">Copyright(c) 2001- NS Solutions Corporation All rights reserved.</div></div>
+            
+            
+        
+        
+        
+        
+    
+
+    <script type="text/javascript">
+    
+
+    
+    
+    </script>
+
+
+
+
+
+
+
+</div>
+
+                                      
+                                  </div>
+                              </div>
+                          
+                          
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                      
+                  
+                  <div class="portlet-break end-of-dummy" id="end-of-dummy-header-f1" style="height: 1px;"><img src="./成績通知書照会 [CampusSquare]_files/sp.gif" class="space"></div>
+              </div>
+              </div>
+            
+</div>
+
+
+<div id="dummy-portlet-3s" class="display-none fixsize-3s"></div>
+<div id="dummy-portlet-2s" class="display-none fixsize-2s"></div>
+<div id="dummy-portlet-s" class="display-none fixsize-s"></div>
+<div id="dummy-portlet-m" class="display-none fixsize-m"></div>
+<div id="dummy-portlet-l" class="display-none fixsize-l"></div>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+            
+            
+        
+        
+    
+
+
+
+
+
+
+
+
+
+
+</body></html>
